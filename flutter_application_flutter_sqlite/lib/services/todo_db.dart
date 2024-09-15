@@ -6,7 +6,7 @@ class TodoDB{
   final tablename = 'todo';
   Future<void> createTable(Database db, int version) async{
     await db.execute('''
-      CREATE TABLE todos if not exist (
+      CREATE TABLE  if not exists $tablename (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         title TEXT NOT NULL,
         description TEXT NOT NULL
